@@ -1,0 +1,2 @@
+# App packages are downloaded per release, not versioned.
+ipk/*.ipk

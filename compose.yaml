@@ -1,0 +1,20 @@
+name: webos-docker
+
+services:
+  cli:
+    build:
+      context: .
+      args:
+        CLI_VERSION: "3.2.6"
+    image: webos-cli:3.2.6
+    volumes:
+      - webos-config:/root/.webos
+      - webos-ssh:/root/.ssh
+      - ./ipk:/work/ipk
+    working_dir: /work
+    stdin_open: true
+    tty: true
+
+volumes:
+  webos-config:
+  webos-ssh:

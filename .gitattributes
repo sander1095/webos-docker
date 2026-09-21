@@ -1,0 +1,5 @@
+# Scripts that run inside the Linux container must keep LF endings.
+*.sh text eol=lf
+webos text eol=lf
+Dockerfile text eol=lf
+*.yaml text eol=lf

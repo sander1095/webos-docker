@@ -1,0 +1,7 @@
+#!/bin/sh
+# Runs an ares-* command inside the webOS CLI container.
+# Usage: ./webos ares-install --device tv --list
+set -e
+dir=$(cd "$(dirname "$0")" && pwd)
+[ "$#" -eq 0 ] && set -- bash
+exec docker compose --file "$dir/compose.yaml" run --rm cli "$@"
