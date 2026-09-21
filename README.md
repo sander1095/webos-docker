@@ -44,8 +44,9 @@ passphrase without one, write it straight into the device config:
 .\webos.ps1 ares-setup-device --modify tv --info '{\"privatekey\":\"tv_webos\",\"passphrase\":\"<PASSCODE>\"}'
 ```
 
-The passphrase rotates whenever the TV's Developer Mode session is renewed, so re-run both steps
-when authentication starts failing.
+The passcode is derived from the device id (the first six hex digits of `nduid`, uppercased), so it is
+stable for a given TV. The Developer Mode *session* expires after roughly 1000 hours; re-enable it on
+the TV and re-run `--getkey` with that same passcode.
 
 Verify with:
 
